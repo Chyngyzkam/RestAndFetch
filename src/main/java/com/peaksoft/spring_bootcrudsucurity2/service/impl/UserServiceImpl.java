@@ -30,18 +30,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void addUser(User user) {
-        userRepository.save(user);
+    public User addUser(User user) {
+        return userRepository.save(user);
     }
 
     @Override
-    public void updateUser(User user) {
-        userRepository.save(user);
+    public User updateUser(User user) {
+       return userRepository.save(user);
     }
 
     @Override
     public void deleteUser(User user) {
-        userRepository.delete(user);
+       userRepository.delete(user);
+    }
+
+    @Override  // Rest controller
+    public void deleteById(Long id) {
+       userRepository.deleteById(id);
     }
 
 

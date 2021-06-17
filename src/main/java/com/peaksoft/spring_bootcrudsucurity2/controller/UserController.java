@@ -22,7 +22,7 @@ public class UserController {
     private final UserService userService;
     private final RoleService roleService;
     @Autowired
-    public UserController(UserService userService, RoleService roleService) {
+    public UserController(UserService userService,  RoleService roleService) {
         this.userService = userService;
         this.roleService = roleService;
     }
@@ -43,6 +43,8 @@ public class UserController {
         model.addAttribute("user", user);
         return "user-page";
     }
+
+
 
 
     @GetMapping("/admin")

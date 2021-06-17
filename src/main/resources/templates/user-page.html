@@ -4,34 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <title>user page</title>
-    <style type="text/css">
-        TABLE {
-            width: 300px; /* Ширина таблицы */
-            border-collapse: collapse; /* Убираем двойные линии между ячейками */
-        }
-        TD, TH {
-            padding: 3px; /* Поля вокруг содержимого таблицы */
-            border: 1px solid black; /* Параметры рамки */
-        }
-        TH {
-            background: #b0e0e6; /* Цвет фона */
-        }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
-<table>
+
+<ul class="nav justify-content-right">
+
+
+    <li class="nav-item">
+<!--        <a class="nav-link active" href="/login">Log out</a>-->
+        <a class="nav-link active" href="/login"><input style="background-color: blueviolet" type="submit" value="Log out"></a>
+
+        <!--            <a th:href="@{/login}"><input type="submit" value="Log out"></a>-->
+
+    </li>
+</ul>
+<div class="text-center">
+    <h2 style="background-color: blueviolet">User</h2>
+</div>
+<table class="table table-bordered table-gray">
     <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>age</th>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">age</th>
     </tr>
-    <tr>
+    <tr style="background-color: #00CC99">
         <td th:text="${user.getId()}"></td>
         <td th:text="${user.getName()}"></td>
         <td th:text="${user.getAge()}"></td>
     </tr>
 </table>
 <br>
-<a style="background-color: rosybrown" th:href="@{/login}"><input type="submit" value="Log out"></a>
+<!--<a style="background-color: rosybrown" th:href="@{/login}"><input type="submit" value="Log out"></a>-->
 </body>
 </html>
+
+
+
+
+
+
+
+<!--    <style type="text/css">-->
+<!--        TABLE {-->
+<!--            width: 300px; /* Ширина таблицы */-->
+<!--            border-collapse: collapse; /* Убираем двойные линии между ячейками */-->
+<!--        }-->
+<!--        TD, TH {-->
+<!--            padding: 3px; /* Поля вокруг содержимого таблицы */-->
+<!--            border: 1px solid black; /* Параметры рамки */-->
+<!--        }-->
+<!--        TH {-->
+<!--            background: gray; /* Цвет фона */-->
+<!--        }-->
+<!--    </style>-->

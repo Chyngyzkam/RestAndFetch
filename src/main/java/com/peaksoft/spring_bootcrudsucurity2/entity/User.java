@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "users2")
+@Table(name = "users")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,9 +26,10 @@ public class User implements UserDetails {
     private int age;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "roles_user",
-            joinColumns = @JoinColumn(name = "users2_id"),
+            joinColumns = @JoinColumn(name = "users_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
+
 
     private Set<Role>roles = new HashSet<>();
 
